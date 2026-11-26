@@ -6,28 +6,28 @@ El repositorio trae los 13 archivos Parquet en `parquet/`. Solo necesitas Git y 
 
 ### Si todavía no tienes un clon
 
-Cierra Power BI Desktop. Mientras se revisa el PR, clona la rama `fix/ruta-parquet` en tu equipo y ejecuta estos comandos en PowerShell:
+Cierra Power BI Desktop. Ejecuta estos comandos en PowerShell o en el Símbolo del sistema (CMD). El clon abrirá la rama `main` por defecto:
 
 ~~~powershell
-git clone --branch fix/ruta-parquet https://github.com/yoshiro-dev/TMDB-DataWarehouse-PowerBI.git
+git clone https://github.com/yoshiro-dev/TMDB-DataWarehouse-PowerBI.git
 cd TMDB-DataWarehouse-PowerBI
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Configurar_Parquet.ps1
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Configurar_Parquet.ps1 -RutaParquet .\parquet
 ~~~
 
 Cuando abra el informe, pulsa **Inicio → Actualizar** para cargar las 13 tablas. Si tu versión de Desktop lo requiere, habilita el formato de proyectos PBIP y PBIR.
 
 ### Si ya tienes un clon
 
-Guarda tus cambios en tu rama de trabajo y cierra Power BI Desktop. En PowerShell, desde la raíz de tu clon, ejecuta:
+Cierra Power BI Desktop y guarda tus cambios en tu rama de trabajo. Si ese clon ya tiene una ruta local configurada, sigue los pasos de «Antes de publicar cambios» para restaurar el marcador antes de cambiar de rama. Desde la raíz del clon, ejecuta:
 
 ~~~powershell
 git fetch origin
-git switch fix/ruta-parquet
-git pull --ff-only origin fix/ruta-parquet
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Configurar_Parquet.ps1
+git switch main
+git pull --ff-only origin main
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Configurar_Parquet.ps1 -RutaParquet .\parquet
 ~~~
 
-Pulsa **Inicio → Actualizar** cuando se abra el informe. Si el configurador encuentra otra carpeta `parquet` junto al clon y quieres usar los archivos de GitHub, añade `-RutaParquet .\parquet` al comando del configurador. Vuelve a ejecutar el configurador si mueves el clon o restauras el marcador de la ruta.
+Pulsa **Inicio → Actualizar** cuando se abra el informe. `-RutaParquet .\parquet` elige los 13 archivos que vienen en el clon. Si mueves el clon o restauras el marcador de la ruta, ejecuta de nuevo el configurador con Power BI cerrado.
 
 ## Contenido del informe
 
@@ -51,7 +51,7 @@ Esta revisión partió del proyecto que abrió en Desktop. Para abrir la versió
 - ROI mediano en gráfica y tarjeta 08, promedio original en tooltip y como medida DAX disponible. Se sigue analizando el mismo campo roi_approx.
 - Candidatas ML usa KEEPFILTERS y devuelve 0 si el contexto no contiene candidatas.
 - No se cambia ninguna clave, relación, Parquet, página pendiente 13–56 ni asignación. Se mantienen 13 tablas, 12 relaciones, 57 páginas y 21 medidas DAX.
-- Prueba pendiente: abrir y actualizar en Power BI Desktop, comprobar que los selectores abran con los valores indicados, limpiar filtros y comprobar los conteos globales originales; seleccionar Candidata ML = false y comprobar 0 candidatas.
+- Se actualizó un proyecto limpio con los 13 Parquet del clon y se verificaron sus conteos. También se probaron los botones de navegación en Power BI Desktop.
 
 ## Configuración portable de Parquet (v1.0.2)
 
