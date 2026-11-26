@@ -1,6 +1,6 @@
 # TMDB Power BI — avance 01–12
 
-Abrir `TMDB.pbip` con Power BI Desktop actualizado, con PBIP y PBIR habilitados si la versión lo requiere. En Transformar datos > Administrar parámetros, comprobar RutaParquet = `C:\Users\yrian\Downloads\salida_tmdb\parquet`, o elegir la carpeta real de los 13 Parquet. Aplicar cambios/Actualizar. No contiene datos incrustados ni credenciales.
+Abrir `TMDB.pbip` con Power BI Desktop actualizado, con PBIP y PBIR habilitados si la versión lo requiere. Antes de abrir, configurar los Parquet locales con las instrucciones de la sección «Configuración portable de Parquet». No contiene datos incrustados ni credenciales.
 
 - 57 páginas: índice + 56 páginas numeradas. 01–12 tienen gráfica y filtros reales; 13–56 están reservadas, no son visualizadores terminados.
 - Yoshiro 01–12; Marco 13–23; Paco 24–34; Filip 35–45; Gabo 46–56.
@@ -23,3 +23,40 @@ Basada en el RAR del usuario que abrió en Desktop. Cerrar el informe anterior, 
 - Candidatas ML usa KEEPFILTERS y devuelve 0 si el contexto no contiene candidatas.
 - No se cambia ninguna clave, relación, Parquet, página pendiente 13–56 ni asignación. Se mantienen 13 tablas, 12 relaciones, 57 páginas y 21 medidas DAX.
 - Prueba pendiente: abrir y actualizar en Power BI Desktop, comprobar que los selectores abran con los valores indicados, limpiar filtros y comprobar los conteos globales originales; seleccionar Candidata ML = false y comprobar 0 candidatas.
+
+## Configuración portable de Parquet (propuesta v1.0.2)
+
+Cada integrante debe usar un clon propio de Git, no editar la misma carpeta .git sincronizada de OneDrive. La carpeta de datos puede proceder de OneDrive, pero los Parquet deben estar descargados localmente (Mantener siempre en este dispositivo).
+
+Estructura recomendada (nombres de usuario y carpeta del clon pueden variar):
+
+    salida_tmdb/
+      parquet/                   # los 13 archivos .parquet
+      TMDB-DataWarehouse-PowerBI/
+        Configurar_Parquet.ps1
+        TMDB.pbip
+        TMDB.SemanticModel/
+
+Con Power BI Desktop cerrado, abre PowerShell en la raíz del clon:
+
+~~~powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Configurar_Parquet.ps1
+~~~
+
+Esta política de ejecución se aplica únicamente al proceso iniciado. El script resuelve ..\parquet respecto a su propia ubicación, comprueba los 13 nombres esperados y tamaños no nulos, actualiza el único parámetro RutaParquet de model.bim y abre TMDB.pbip. Si los datos están en otra carpeta, especifica su ubicación local:
+
+~~~powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Configurar_Parquet.ps1 -RutaParquet "D:\Datos\TMDB\parquet"
+~~~
+
+Usa -NoAbrir para configurar sin iniciar Power BI. En Desktop, pulsa Actualizar y verifica la carga de las 13 tablas. File.Contents recibe una ruta absoluta resuelta localmente; Power Query no interpreta ..\parquet directamente respecto al PBIP.
+
+El script modifica model.bim en el clon local. No subas la ruta de tu equipo a GitHub: revisa git status y git diff antes de hacer commit; agrega exclusivamente las carpetas de las páginas asignadas. Si solo cambiaste la ruta y no tienes otras modificaciones del modelo, puedes restaurarla con Power BI cerrado mediante:
+
+~~~powershell
+git restore -- TMDB.SemanticModel/model.bim
+~~~
+
+Esto elimina la configuración local: vuelve a ejecutar el script para abrir el informe cuando lo necesites. Antes de cambiar de rama o fusionar cambios del modelo, cierra Power BI y preserva cualquier modificación semántica legítima por separado. No uses git add . para publicar visualizadores.
+
+La configuración no altera ni descarga los Parquet y no comprueba su contenido interno. No requiere reejecutar Pentaho ni PostgreSQL. Pendiente de prueba con Power BI Desktop y los Parquet reales del equipo antes de integrar esta corrección.
