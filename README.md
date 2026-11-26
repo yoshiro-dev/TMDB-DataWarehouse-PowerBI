@@ -29,6 +29,12 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Configurar_Parquet.ps1
 
 Pulsa **Inicio → Actualizar** cuando se abra el informe. `-RutaParquet .\parquet` elige los 13 archivos que vienen en el clon. Si mueves el clon o restauras el marcador de la ruta, ejecuta de nuevo el configurador con Power BI cerrado.
 
+### Si Power BI dice que falta `displayName`
+
+El mensaje `Required properties are missing from object: displayName` aparece al abrir un clon con metadatos antiguos. La corrección agrega `metadata.displayName` a los archivos `.platform` del informe y del modelo semántico. Se confirmó la apertura en el equipo que mostraba el error.
+
+Cierra Power BI Desktop y sigue los pasos de [Si ya tienes un clon](#si-ya-tienes-un-clon). La actualización del repositorio descarga ambos archivos corregidos. Después, ejecuta el configurador y pulsa **Inicio → Actualizar**.
+
 ## Contenido del informe
 
 - 57 páginas: índice + 56 páginas numeradas. 01–12 tienen gráfica y filtros reales; 13–56 están reservadas, no son visualizadores terminados.
