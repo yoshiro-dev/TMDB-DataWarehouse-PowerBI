@@ -279,7 +279,7 @@
             "value": "Text"
           }
         ],
-        "expression": "\"C:\\Users\\yrian\\Downloads\\salida_tmdb\\parquet\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "expression": "\"__EJECUTA_CONFIGURAR_PARQUET__\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
         "kind": "m",
         "lineageTag": "a41f6baf-0c96-55c1-b38a-02c65da1d037"
       }

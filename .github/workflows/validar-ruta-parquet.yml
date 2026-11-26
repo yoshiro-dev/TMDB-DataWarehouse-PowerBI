@@ -1,0 +1,18 @@
+name: Validar ruta Parquet
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - fix/ruta-parquet
+
+jobs:
+  ruta-portable:
+    runs-on: windows-latest
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+      - name: Comprobar que RutaParquet no sea personal
+        shell: powershell
+        run: .\Configurar_Parquet.ps1 -VerificarRepositorio
