@@ -1,0 +1,1291 @@
+{
+  "compatibilityLevel": 1601,
+  "model": {
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"dim_fecha\",\"dim_pelicula\",\"dim_genero\",\"dim_productora\",\"dim_pais\",\"dim_idioma\",\"dim_palabra_clave\",\"fact_peliculas\",\"bridge_pelicula_genero\",\"bridge_pelicula_productora\",\"bridge_pelicula_pais\",\"bridge_pelicula_idioma\",\"bridge_pelicula_palabra_clave\",\"RutaParquet\"]"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.130.930.0 (24.06)"
+      }
+    ],
+    "culture": "es-MX",
+    "cultures": [
+      {
+        "name": "es-MX",
+        "linguisticMetadata": {
+          "content": {
+            "Entities": {
+              "dim_fecha.anio": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "dim_fecha",
+                    "ConceptualProperty": "anio"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Año de estreno": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "dim_fecha.decada": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "dim_fecha",
+                    "ConceptualProperty": "decada"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Década de estreno": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "dim_fecha.fecha": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "dim_fecha",
+                    "ConceptualProperty": "fecha"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Intervalo de fechas": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "dim_fecha.mes": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "dim_fecha",
+                    "ConceptualProperty": "mes"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Mes": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "dim_fecha.periodo_estreno": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "dim_fecha",
+                    "ConceptualProperty": "periodo_estreno"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Período de estreno": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "dim_fecha.trimestre": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "dim_fecha",
+                    "ConceptualProperty": "trimestre"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Trimestre": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "dim_genero.genero": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "dim_genero",
+                    "ConceptualProperty": "genero"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Género": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "dim_pais.pais": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "dim_pais",
+                    "ConceptualProperty": "pais"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "País de producción": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "dim_pelicula.financial_candidate": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "dim_pelicula",
+                    "ConceptualProperty": "financial_candidate"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Candidata ML": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "dim_pelicula.status": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "dim_pelicula",
+                    "ConceptualProperty": "status"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Estado de la película": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "fact_peliculas.calidad_financiera": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "fact_peliculas",
+                    "ConceptualProperty": "calidad_financiera"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Calidad financiera": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              }
+            },
+            "Language": "en-US",
+            "Version": "2.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": false
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "RutaParquet",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"C:\\Users\\yrian\\Downloads\\salida_tmdb\\parquet\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "a41f6baf-0c96-55c1-b38a-02c65da1d037"
+      }
+    ],
+    "relationships": [
+      {
+        "name": "e69ec562-9b40-5625-a9bb-b5a9a2f8a24a",
+        "fromColumn": "fecha_key",
+        "fromTable": "fact_peliculas",
+        "toColumn": "fecha_key",
+        "toTable": "dim_fecha"
+      },
+      {
+        "name": "83dfabb9-07e8-512f-82e4-b8d1dcaba445",
+        "fromColumn": "pelicula_key",
+        "fromTable": "fact_peliculas",
+        "toColumn": "pelicula_key",
+        "toTable": "dim_pelicula"
+      },
+      {
+        "name": "e2251003-a4cf-5554-aa6b-7c626ca0da39",
+        "crossFilteringBehavior": "bothDirections",
+        "fromColumn": "pelicula_key",
+        "fromTable": "bridge_pelicula_genero",
+        "toColumn": "pelicula_key",
+        "toTable": "fact_peliculas"
+      },
+      {
+        "name": "3cda4a97-4942-5bf9-8f0d-4b1d3f6fd0b1",
+        "fromColumn": "genero_key",
+        "fromTable": "bridge_pelicula_genero",
+        "toColumn": "genero_key",
+        "toTable": "dim_genero"
+      },
+      {
+        "name": "6c33a731-cd4c-587e-b524-3302913723c1",
+        "crossFilteringBehavior": "bothDirections",
+        "fromColumn": "pelicula_key",
+        "fromTable": "bridge_pelicula_productora",
+        "toColumn": "pelicula_key",
+        "toTable": "fact_peliculas"
+      },
+      {
+        "name": "3529426a-20eb-564b-b6f1-209c6f0470b5",
+        "fromColumn": "productora_key",
+        "fromTable": "bridge_pelicula_productora",
+        "toColumn": "productora_key",
+        "toTable": "dim_productora"
+      },
+      {
+        "name": "b340e057-931e-546b-b548-8c02c9ee8f7d",
+        "crossFilteringBehavior": "bothDirections",
+        "fromColumn": "pelicula_key",
+        "fromTable": "bridge_pelicula_pais",
+        "toColumn": "pelicula_key",
+        "toTable": "fact_peliculas"
+      },
+      {
+        "name": "8eae6f9e-eb7c-5798-af8f-aa6f0d125afb",
+        "fromColumn": "pais_key",
+        "fromTable": "bridge_pelicula_pais",
+        "toColumn": "pais_key",
+        "toTable": "dim_pais"
+      },
+      {
+        "name": "aacf04e6-b8f1-5872-8f9c-a89e1d3037cb",
+        "crossFilteringBehavior": "bothDirections",
+        "fromColumn": "pelicula_key",
+        "fromTable": "bridge_pelicula_idioma",
+        "toColumn": "pelicula_key",
+        "toTable": "fact_peliculas"
+      },
+      {
+        "name": "9b625781-848c-57fa-ac63-a531b710b332",
+        "fromColumn": "idioma_key",
+        "fromTable": "bridge_pelicula_idioma",
+        "toColumn": "idioma_key",
+        "toTable": "dim_idioma"
+      },
+      {
+        "name": "644def9a-6675-5df5-bffa-c1a36bf2104c",
+        "crossFilteringBehavior": "bothDirections",
+        "fromColumn": "pelicula_key",
+        "fromTable": "bridge_pelicula_palabra_clave",
+        "toColumn": "pelicula_key",
+        "toTable": "fact_peliculas"
+      },
+      {
+        "name": "0ca70bfc-3da6-5bdb-adbc-ec6dde34f1d7",
+        "fromColumn": "palabra_clave_key",
+        "fromTable": "bridge_pelicula_palabra_clave",
+        "toColumn": "palabra_clave_key",
+        "toTable": "dim_palabra_clave"
+      }
+    ],
+    "sourceQueryCulture": "es-MX",
+    "tables": [
+      {
+        "name": "dim_fecha",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "fecha_key",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "99b0aec9-7251-52f3-9bbe-5379826d40ff",
+            "sourceColumn": "fecha_key",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "fecha",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "yyyy-MM-dd",
+            "lineageTag": "85d3e607-efd2-510e-b618-78e6aaf50c76",
+            "sourceColumn": "fecha",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "anio",
+            "dataType": "int64",
+            "lineageTag": "9647af59-d5a5-5847-8f7d-866aa1a04695",
+            "sourceColumn": "anio",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "trimestre",
+            "dataType": "int64",
+            "lineageTag": "a74cd64b-0f70-5067-9f62-040f6ee7a551",
+            "sourceColumn": "trimestre",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "mes",
+            "dataType": "int64",
+            "lineageTag": "a9095024-c5bf-56c6-836f-9f042e10ae5a",
+            "sourceColumn": "mes",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "dia",
+            "dataType": "int64",
+            "lineageTag": "c7af99c1-5c91-5620-b3e5-b68a943ea3a7",
+            "sourceColumn": "dia",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "dia_semana",
+            "dataType": "int64",
+            "lineageTag": "1dabf7b8-9621-55ec-a639-0bd2019fbfb4",
+            "sourceColumn": "dia_semana",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "decada",
+            "dataType": "int64",
+            "lineageTag": "71665cdd-5a4b-5f40-b91e-bb08e383a89f",
+            "sourceColumn": "decada",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "periodo_estreno",
+            "dataType": "string",
+            "description": "Corte de análisis fijo: 26/11/2026, no es la fecha de captura del dataset. No elimina registros.",
+            "lineageTag": "fa9f62b8-dcf4-5e2f-bb01-2392e1538b05",
+            "sourceColumn": "periodo_estreno",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "d900ab42-0ed0-5303-80a2-4277a1748ac9",
+        "partitions": [
+          {
+            "name": "dim_fecha",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Origen = Parquet.Document(File.Contents(RutaParquet & \"\\dim_fecha.parquet\")),",
+                "    Tipos = Table.TransformColumnTypes(Origen, {{\"fecha_key\", Int64.Type}, {\"fecha\", type date}, {\"anio\", Int64.Type}, {\"trimestre\", Int64.Type}, {\"mes\", Int64.Type}, {\"dia\", Int64.Type}, {\"dia_semana\", Int64.Type}, {\"decada\", Int64.Type}}),",
+                "    Clasificacion = Table.AddColumn(Tipos, \"periodo_estreno\", each if [fecha] = null then \"Sin fecha\" else if [fecha] < #date(1888, 1, 1) then \"Anterior a 1888\" else if [fecha] > #date(2026, 11, 26) then \"Posterior al corte\" else \"Histórico\", type text)",
+                "in",
+                "    Clasificacion"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "dim_pelicula",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "pelicula_key",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "b20e952d-2ad3-56b0-a736-97a8a4b2391f",
+            "sourceColumn": "pelicula_key",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "title",
+            "dataType": "string",
+            "lineageTag": "062cde7c-4d23-52e8-959c-786a5e6cb386",
+            "sourceColumn": "title",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "original_title",
+            "dataType": "string",
+            "lineageTag": "f8e63f29-b68e-5df4-84ce-ef2e02a88bf8",
+            "sourceColumn": "original_title",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "original_language",
+            "dataType": "string",
+            "lineageTag": "3ce3b11a-e541-548a-832d-f1d770c43b51",
+            "sourceColumn": "original_language",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "status",
+            "dataType": "string",
+            "lineageTag": "ce97e634-d703-57bb-997d-36b09ee25e61",
+            "sourceColumn": "status",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "adult",
+            "dataType": "boolean",
+            "lineageTag": "e6661fa7-3592-5010-86af-5f100c9349f9",
+            "sourceColumn": "adult",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "imdb_id",
+            "dataType": "string",
+            "lineageTag": "ae378389-275b-5e39-8e29-dd3d1c04b18a",
+            "sourceColumn": "imdb_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "source_row",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "95e833cb-7786-58d3-9115-a776e31c6b22",
+            "sourceColumn": "source_row",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "budget_known",
+            "dataType": "boolean",
+            "lineageTag": "0ff2c44e-4b28-5440-a145-94ded627632d",
+            "sourceColumn": "budget_known",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "revenue_known",
+            "dataType": "boolean",
+            "lineageTag": "3fbc3070-f1a8-51db-89b5-5b79211f7aa7",
+            "sourceColumn": "revenue_known",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "financial_candidate",
+            "dataType": "boolean",
+            "lineageTag": "b9cc5bc8-8f2d-57ce-a953-04525236575e",
+            "sourceColumn": "financial_candidate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "review_flag",
+            "dataType": "string",
+            "lineageTag": "ccf031ce-6545-568e-828e-c480e9739ad6",
+            "sourceColumn": "review_flag",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "completeness",
+            "dataType": "int64",
+            "lineageTag": "0a49e8d7-29ce-5128-9e7f-15ef436c9e72",
+            "sourceColumn": "completeness",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "2de18465-51a0-5052-910c-1c9ffba9c1ee",
+        "partitions": [
+          {
+            "name": "dim_pelicula",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Origen = Parquet.Document(File.Contents(RutaParquet & \"\\dim_pelicula.parquet\")),",
+                "    Tipos = Table.TransformColumnTypes(Origen, {{\"pelicula_key\", Int64.Type}, {\"title\", type text}, {\"original_title\", type text}, {\"original_language\", type text}, {\"status\", type text}, {\"adult\", type logical}, {\"imdb_id\", type text}, {\"source_row\", Int64.Type}, {\"budget_known\", type logical}, {\"revenue_known\", type logical}, {\"financial_candidate\", type logical}, {\"review_flag\", type text}, {\"completeness\", Int64.Type}})",
+                "in",
+                "    Tipos"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "dim_genero",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "genero_key",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "20593df8-5fa7-565a-bb40-2d6fb2bda610",
+            "sourceColumn": "genero_key",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "genero",
+            "dataType": "string",
+            "lineageTag": "3d7eb7ed-d8e3-526f-8037-2a31ee1dffd9",
+            "sourceColumn": "genero",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "e8d6d94f-04c1-583e-8bec-a33cc203066d",
+        "partitions": [
+          {
+            "name": "dim_genero",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Origen = Parquet.Document(File.Contents(RutaParquet & \"\\dim_genero.parquet\")),",
+                "    Tipos = Table.TransformColumnTypes(Origen, {{\"genero_key\", Int64.Type}, {\"genero\", type text}})",
+                "in",
+                "    Tipos"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "dim_productora",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "productora_key",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "a2b1b8c8-ae32-5b5f-b99a-28ef5e4e32ed",
+            "sourceColumn": "productora_key",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "productora",
+            "dataType": "string",
+            "lineageTag": "9fe19a0f-2003-5787-9a00-daa58194727e",
+            "sourceColumn": "productora",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "d28bbedb-3742-54c9-9c62-4802e4821ab6",
+        "partitions": [
+          {
+            "name": "dim_productora",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Origen = Parquet.Document(File.Contents(RutaParquet & \"\\dim_productora.parquet\")),",
+                "    Tipos = Table.TransformColumnTypes(Origen, {{\"productora_key\", Int64.Type}, {\"productora\", type text}})",
+                "in",
+                "    Tipos"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "dim_pais",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "pais_key",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "0afa5144-b8a1-5fc4-a1d3-20131da26465",
+            "sourceColumn": "pais_key",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "pais",
+            "dataType": "string",
+            "lineageTag": "7c5bda52-7f78-5386-a9d4-28ac1023fda5",
+            "sourceColumn": "pais",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "0cac816a-925c-59ec-a2dc-e887a570bff4",
+        "partitions": [
+          {
+            "name": "dim_pais",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Origen = Parquet.Document(File.Contents(RutaParquet & \"\\dim_pais.parquet\")),",
+                "    Tipos = Table.TransformColumnTypes(Origen, {{\"pais_key\", Int64.Type}, {\"pais\", type text}})",
+                "in",
+                "    Tipos"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "dim_idioma",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "idioma_key",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "9e649ba1-ba0d-5500-8dea-cc53572e44c8",
+            "sourceColumn": "idioma_key",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "idioma",
+            "dataType": "string",
+            "lineageTag": "a90ff162-bdc2-5603-93ad-3281597ec4c4",
+            "sourceColumn": "idioma",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "8404f909-564b-5af2-b1cd-4eb2f880e908",
+        "partitions": [
+          {
+            "name": "dim_idioma",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Origen = Parquet.Document(File.Contents(RutaParquet & \"\\dim_idioma.parquet\")),",
+                "    Tipos = Table.TransformColumnTypes(Origen, {{\"idioma_key\", Int64.Type}, {\"idioma\", type text}})",
+                "in",
+                "    Tipos"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "dim_palabra_clave",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "palabra_clave_key",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "0b2550fe-5dec-5b27-b3e0-b190cc232c9d",
+            "sourceColumn": "palabra_clave_key",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "palabra_clave",
+            "dataType": "string",
+            "lineageTag": "6331aecf-0ad8-50af-85d5-a7924dc4d942",
+            "sourceColumn": "palabra_clave",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "329acede-f4b6-534e-86ad-78c74af46c4f",
+        "partitions": [
+          {
+            "name": "dim_palabra_clave",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Origen = Parquet.Document(File.Contents(RutaParquet & \"\\dim_palabra_clave.parquet\")),",
+                "    Tipos = Table.TransformColumnTypes(Origen, {{\"palabra_clave_key\", Int64.Type}, {\"palabra_clave\", type text}})",
+                "in",
+                "    Tipos"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "fact_peliculas",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "pelicula_key",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "32101b64-77b3-5510-b9fe-e27e9409bf1e",
+            "sourceColumn": "pelicula_key",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "fecha_key",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "1f941760-5fb8-577e-815c-ccfbc02b5716",
+            "sourceColumn": "fecha_key",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "budget",
+            "dataType": "int64",
+            "lineageTag": "b73a333a-1d93-5d5d-8f89-3a613513832f",
+            "sourceColumn": "budget",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "revenue",
+            "dataType": "int64",
+            "lineageTag": "89ffec25-4c6a-56b9-bf8b-65f83bbfaa14",
+            "sourceColumn": "revenue",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "vote_average",
+            "dataType": "double",
+            "lineageTag": "dcb8cdca-39e3-5374-8176-b2798a3a7000",
+            "sourceColumn": "vote_average",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "vote_count",
+            "dataType": "int64",
+            "lineageTag": "cfd801b7-018e-5663-bc4a-a43b7a05ddb0",
+            "sourceColumn": "vote_count",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "runtime",
+            "dataType": "int64",
+            "lineageTag": "9d0bf9e0-6383-541b-bcb4-ddbdad3ce281",
+            "sourceColumn": "runtime",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "popularity",
+            "dataType": "double",
+            "lineageTag": "b58fb1b6-8b54-5ecc-97b9-9b2e53673f0c",
+            "sourceColumn": "popularity",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "gross_difference",
+            "dataType": "int64",
+            "lineageTag": "07b098a9-3278-5a5b-94c5-ec121c765e9f",
+            "sourceColumn": "gross_difference",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "roi_approx",
+            "dataType": "double",
+            "lineageTag": "2f250e10-16d0-59ee-bf35-1d9f5b15b39e",
+            "sourceColumn": "roi_approx",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "calidad_financiera",
+            "dataType": "string",
+            "description": "Reglas exploratorias: presupuesto positivo menor a 1000 o >=300 millones; ingreso positivo <=100 o >=5 mil millones; ROI >=100 (10,000%); presupuesto igual a ingreso. Sin alertas no significa verificado. No se exige tener ambos importes.",
+            "lineageTag": "43035acc-7d8a-5b6c-a387-b2026644ca2d",
+            "sourceColumn": "calidad_financiera",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "e00aef31-b3ff-53f8-959f-ca74f0907cd0",
+        "measures": [
+          {
+            "name": "Presupuesto total",
+            "description": "Agregación de valores conocidos; nulos no se sustituyen por cero. ROI y diferencia bruta no equivalen a beneficio neto.",
+            "expression": "SUM('fact_peliculas'[budget])",
+            "formatString": "$#,0",
+            "lineageTag": "c674cffb-aab1-5da4-8e3c-78d3fa21911c"
+          },
+          {
+            "name": "Ingresos totales",
+            "description": "Agregación de valores conocidos; nulos no se sustituyen por cero. ROI y diferencia bruta no equivalen a beneficio neto.",
+            "expression": "SUM('fact_peliculas'[revenue])",
+            "formatString": "$#,0",
+            "lineageTag": "a45d9f0b-1269-55f5-b953-b9a8da476674"
+          },
+          {
+            "name": "Calificación promedio",
+            "description": "Agregación de valores conocidos; nulos no se sustituyen por cero. ROI y diferencia bruta no equivalen a beneficio neto.",
+            "expression": "AVERAGE('fact_peliculas'[vote_average])",
+            "formatString": "0.00",
+            "lineageTag": "a7c8422b-f215-5147-968d-74670631524e"
+          },
+          {
+            "name": "Votos totales",
+            "description": "Agregación de valores conocidos; nulos no se sustituyen por cero. ROI y diferencia bruta no equivalen a beneficio neto.",
+            "expression": "SUM('fact_peliculas'[vote_count])",
+            "formatString": "#,0",
+            "lineageTag": "1f7fc9b4-b1eb-5266-a602-acaa398c3356"
+          },
+          {
+            "name": "Duración promedio",
+            "description": "Agregación de valores conocidos; nulos no se sustituyen por cero. ROI y diferencia bruta no equivalen a beneficio neto.",
+            "expression": "AVERAGE('fact_peliculas'[runtime])",
+            "formatString": "0.0",
+            "lineageTag": "16ea2003-4162-569f-895e-0d536e9881dc"
+          },
+          {
+            "name": "Popularidad promedio",
+            "description": "Agregación de valores conocidos; nulos no se sustituyen por cero. ROI y diferencia bruta no equivalen a beneficio neto.",
+            "expression": "AVERAGE('fact_peliculas'[popularity])",
+            "formatString": "0.00",
+            "lineageTag": "ec0d390b-cf7d-57e4-961b-da7d466b9384"
+          },
+          {
+            "name": "Diferencia bruta total",
+            "description": "Agregación de valores conocidos; nulos no se sustituyen por cero. ROI y diferencia bruta no equivalen a beneficio neto.",
+            "expression": "SUM('fact_peliculas'[gross_difference])",
+            "formatString": "$#,0;($#,0);$0",
+            "lineageTag": "a7517171-f448-5805-92e6-59e269b6367a"
+          },
+          {
+            "name": "ROI promedio",
+            "description": "Agregación de valores conocidos; nulos no se sustituyen por cero. ROI y diferencia bruta no equivalen a beneficio neto.",
+            "expression": "AVERAGE('fact_peliculas'[roi_approx])",
+            "formatString": "0.0%",
+            "lineageTag": "29de1860-af4e-5321-890e-95ca96828a1d"
+          },
+          {
+            "name": "Películas",
+            "expression": "DISTINCTCOUNT(fact_peliculas[pelicula_key])",
+            "formatString": "#,0",
+            "lineageTag": "9ae2271a-7371-5b3d-8531-41ad058556e4"
+          },
+          {
+            "name": "Con presupuesto",
+            "expression": "COUNT(fact_peliculas[budget])",
+            "formatString": "#,0",
+            "lineageTag": "14f0ef39-b3e8-5f73-bdd3-91172d7ebc68"
+          },
+          {
+            "name": "Con ingresos",
+            "expression": "COUNT(fact_peliculas[revenue])",
+            "formatString": "#,0",
+            "lineageTag": "39782fd7-adcb-5280-af14-be1a34f9a0c1"
+          },
+          {
+            "name": "Candidatas ML",
+            "description": "Candidatas del ETL dentro del contexto, respeta el segmentador de candidata ML.",
+            "expression": "COALESCE(CALCULATE([Películas], KEEPFILTERS(dim_pelicula[financial_candidate] = TRUE())), 0)",
+            "formatString": "#,0",
+            "lineageTag": "2749d899-11cd-5fdb-95e8-8b967c2a106c"
+          },
+          {
+            "name": "Con dato: budget",
+            "expression": "COUNT(fact_peliculas[budget])",
+            "formatString": "#,0",
+            "lineageTag": "7bef9a5a-4a3b-56d5-a34a-b17cfd494e8e"
+          },
+          {
+            "name": "Con dato: revenue",
+            "expression": "COUNT(fact_peliculas[revenue])",
+            "formatString": "#,0",
+            "lineageTag": "baa85392-33d4-520a-834c-05569bd646f7"
+          },
+          {
+            "name": "Con dato: vote_average",
+            "expression": "COUNT(fact_peliculas[vote_average])",
+            "formatString": "#,0",
+            "lineageTag": "3498b69d-0c32-52de-bc49-88b094529122"
+          },
+          {
+            "name": "Con dato: vote_count",
+            "expression": "COUNT(fact_peliculas[vote_count])",
+            "formatString": "#,0",
+            "lineageTag": "949e77e7-7c83-503e-aef1-896a69e2d368"
+          },
+          {
+            "name": "Con dato: runtime",
+            "expression": "COUNT(fact_peliculas[runtime])",
+            "formatString": "#,0",
+            "lineageTag": "932d709f-e00f-5be9-9996-30c6e0f32f4a"
+          },
+          {
+            "name": "Con dato: popularity",
+            "expression": "COUNT(fact_peliculas[popularity])",
+            "formatString": "#,0",
+            "lineageTag": "ed150d07-5de6-5d76-ab94-1932003fd785"
+          },
+          {
+            "name": "Con dato: gross_difference",
+            "expression": "COUNT(fact_peliculas[gross_difference])",
+            "formatString": "#,0",
+            "lineageTag": "4ad77fd7-ef82-5568-a13a-68badadab95d"
+          },
+          {
+            "name": "Con dato: roi_approx",
+            "expression": "COUNT(fact_peliculas[roi_approx])",
+            "formatString": "#,0",
+            "lineageTag": "d72dea19-778f-5d85-a77a-8334b2a3f705"
+          },
+          {
+            "name": "ROI mediano",
+            "description": "Mediana del ROI aproximado de películas con ambos importes, resistente a valores extremos. No es beneficio neto.",
+            "expression": "MEDIAN('fact_peliculas'[roi_approx])",
+            "formatString": "0.0%",
+            "lineageTag": "a44710c3-bbbc-50ea-a977-43d0df8ed814"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "fact_peliculas",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Origen = Parquet.Document(File.Contents(RutaParquet & \"\\fact_peliculas.parquet\")),",
+                "    Tipos = Table.TransformColumnTypes(Origen, {{\"pelicula_key\", Int64.Type}, {\"fecha_key\", Int64.Type}, {\"budget\", Int64.Type}, {\"revenue\", Int64.Type}, {\"vote_average\", type number}, {\"vote_count\", Int64.Type}, {\"runtime\", Int64.Type}, {\"popularity\", type number}, {\"gross_difference\", Int64.Type}, {\"roi_approx\", type number}}),",
+                "    Clasificacion = Table.AddColumn(Tipos, \"calidad_financiera\", each if ([budget] <> null and ([budget] < 1000 or [budget] >= 300000000)) or ([revenue] <> null and ([revenue] <= 100 or [revenue] >= 5000000000)) or ([roi_approx] <> null and [roi_approx] >= 100) or ([budget] <> null and [revenue] <> null and [budget] = [revenue]) then \"Revisar\" else if [budget] = null and [revenue] = null then \"Sin importes\" else \"Sin alertas detectadas\", type text)",
+                "in",
+                "    Clasificacion"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "bridge_pelicula_genero",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "pelicula_key",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "358a117d-0f34-539b-8a45-78557118fb04",
+            "sourceColumn": "pelicula_key",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "genero_key",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "badca811-9bc6-583f-9a1c-c64615b47f91",
+            "sourceColumn": "genero_key",
+            "summarizeBy": "none"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "b7b99f55-2c57-5cf1-bb62-de82fe8ea28f",
+        "partitions": [
+          {
+            "name": "bridge_pelicula_genero",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Origen = Parquet.Document(File.Contents(RutaParquet & \"\\bridge_pelicula_genero.parquet\")),",
+                "    Tipos = Table.TransformColumnTypes(Origen, {{\"pelicula_key\", Int64.Type}, {\"genero_key\", Int64.Type}})",
+                "in",
+                "    Tipos"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "bridge_pelicula_productora",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "pelicula_key",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "263fd0b1-0c7c-594b-86d0-9a3c493f0889",
+            "sourceColumn": "pelicula_key",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "productora_key",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "76383b18-5dd2-5e59-8cc0-ad3a54554b8d",
+            "sourceColumn": "productora_key",
+            "summarizeBy": "none"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "1279e56b-1b74-59c9-b041-dd13eb0a63ed",
+        "partitions": [
+          {
+            "name": "bridge_pelicula_productora",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Origen = Parquet.Document(File.Contents(RutaParquet & \"\\bridge_pelicula_productora.parquet\")),",
+                "    Tipos = Table.TransformColumnTypes(Origen, {{\"pelicula_key\", Int64.Type}, {\"productora_key\", Int64.Type}})",
+                "in",
+                "    Tipos"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "bridge_pelicula_pais",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "pelicula_key",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "9971f8da-dd24-5610-bc15-d77bf8d907cd",
+            "sourceColumn": "pelicula_key",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "pais_key",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "ef0ad7ff-d790-5f01-a9e1-de87d22bfc26",
+            "sourceColumn": "pais_key",
+            "summarizeBy": "none"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "c395172a-d516-5799-a886-d1b15a5ef67b",
+        "partitions": [
+          {
+            "name": "bridge_pelicula_pais",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Origen = Parquet.Document(File.Contents(RutaParquet & \"\\bridge_pelicula_pais.parquet\")),",
+                "    Tipos = Table.TransformColumnTypes(Origen, {{\"pelicula_key\", Int64.Type}, {\"pais_key\", Int64.Type}})",
+                "in",
+                "    Tipos"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "bridge_pelicula_idioma",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "pelicula_key",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "1b1846df-9af0-5858-9b38-29db5d39bf57",
+            "sourceColumn": "pelicula_key",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "idioma_key",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "86fd38f7-051f-501b-99f1-03e7411a20da",
+            "sourceColumn": "idioma_key",
+            "summarizeBy": "none"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "267ed612-8a6d-5371-bde0-213f2027dbf6",
+        "partitions": [
+          {
+            "name": "bridge_pelicula_idioma",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Origen = Parquet.Document(File.Contents(RutaParquet & \"\\bridge_pelicula_idioma.parquet\")),",
+                "    Tipos = Table.TransformColumnTypes(Origen, {{\"pelicula_key\", Int64.Type}, {\"idioma_key\", Int64.Type}})",
+                "in",
+                "    Tipos"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "bridge_pelicula_palabra_clave",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "pelicula_key",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "f7e8d1c1-2ff0-59c0-aa48-eb467a130208",
+            "sourceColumn": "pelicula_key",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "palabra_clave_key",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "16472750-cc82-5c0b-8c74-f767cfa84f21",
+            "sourceColumn": "palabra_clave_key",
+            "summarizeBy": "none"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "78ee59b9-55ea-5eca-9884-f13d7b76d9a2",
+        "partitions": [
+          {
+            "name": "bridge_pelicula_palabra_clave",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Origen = Parquet.Document(File.Contents(RutaParquet & \"\\bridge_pelicula_palabra_clave.parquet\")),",
+                "    Tipos = Table.TransformColumnTypes(Origen, {{\"pelicula_key\", Int64.Type}, {\"palabra_clave_key\", Int64.Type}})",
+                "in",
+                "    Tipos"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

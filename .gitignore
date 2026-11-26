@@ -1,0 +1,22 @@
+**/.pbi/
+*.pbix
+# Power BI
+**/.pbi/
+*.abf
+*.pbix
+
+# Datos locales
+*.parquet
+*.rar
+*.zip
+
+# Credenciales
+.env
+.env.*
+*.pem
+*.key
+
+# Windows y Python
+Thumbs.db
+__pycache__/
+.venv/

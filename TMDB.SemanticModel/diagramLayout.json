@@ -1,0 +1,191 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 299.97445961966434,
+            "y": 393.77126210360143
+          },
+          "nodeIndex": "bridge_pelicula_genero",
+          "nodeLineageTag": "b7b99f55-2c57-5cf1-bb62-de82fe8ea28f",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 331.44612012401922,
+            "y": 707.99843891894727
+          },
+          "nodeIndex": "bridge_pelicula_idioma",
+          "nodeLineageTag": "267ed612-8a6d-5371-bde0-213f2027dbf6",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 922.3709358918,
+            "y": 800.54050972386881
+          },
+          "nodeIndex": "bridge_pelicula_pais",
+          "nodeLineageTag": "c395172a-d516-5799-a886-d1b15a5ef67b",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 300.20627344627781,
+            "y": 212.06024923170617
+          },
+          "nodeIndex": "bridge_pelicula_palabra_clave",
+          "nodeLineageTag": "78ee59b9-55ea-5eca-9884-f13d7b76d9a2",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 873.79707550413718,
+            "y": 171.92198906229078
+          },
+          "nodeIndex": "bridge_pelicula_productora",
+          "nodeLineageTag": "1279e56b-1b74-59c9-b041-dd13eb0a63ed",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 918.40185892916918,
+            "y": 383.73595311198983
+          },
+          "nodeIndex": "dim_fecha",
+          "nodeLineageTag": "d900ab42-0ed0-5303-80a2-4277a1748ac9",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 10,
+            "y": 339.62211721853078
+          },
+          "nodeIndex": "dim_genero",
+          "nodeLineageTag": "e8d6d94f-04c1-583e-8bec-a33cc203066d",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 342.29567194834203,
+            "y": 1003.8569831236778
+          },
+          "nodeIndex": "dim_idioma",
+          "nodeLineageTag": "8404f909-564b-5af2-b1cd-4eb2f880e908",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1144.7961843536777,
+            "y": 982.2906135402186
+          },
+          "nodeIndex": "dim_pais",
+          "nodeLineageTag": "0cac816a-925c-59ec-a2dc-e887a570bff4",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 634.18319491049556,
+            "y": -10
+          },
+          "nodeIndex": "dim_palabra_clave",
+          "nodeLineageTag": "329acede-f4b6-534e-86ad-78c74af46c4f",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 632.401274069208,
+            "y": 712.74686471705331
+          },
+          "nodeIndex": "dim_pelicula",
+          "nodeLineageTag": "2de18465-51a0-5052-910c-1c9ffba9c1ee",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1176.2851571708702,
+            "y": 203.37145068901418
+          },
+          "nodeIndex": "dim_productora",
+          "nodeLineageTag": "d28bbedb-3742-54c9-9c62-4802e4821ab6",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 590.014732248393,
+            "y": 355.47874202635353
+          },
+          "nodeIndex": "fact_peliculas",
+          "nodeLineageTag": "e00aef31-b3ff-53f8-959f-ca74f0907cd0",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Todas las tablas",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas las tablas",
+  "defaultDiagram": "Todas las tablas"
+}

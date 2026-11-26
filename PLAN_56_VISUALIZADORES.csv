@@ -1,0 +1,57 @@
+﻿n,owner,dim,measure,field,title,status
+1,Yoshiro,fecha,Presupuesto total,budget,01 · Presupuesto total por fecha de estreno,Implementado; ajustes v3 pendientes de prueba Desktop
+2,Yoshiro,fecha,Ingresos totales,revenue,02 · Ingresos totales por fecha de estreno,Implementado; ajustes v3 pendientes de prueba Desktop
+3,Yoshiro,fecha,Calificación promedio,vote_average,03 · Calificación promedio por fecha de estreno,Implementado; ajustes v3 pendientes de prueba Desktop
+4,Yoshiro,fecha,Votos totales,vote_count,04 · Votos totales por fecha de estreno,Implementado; ajustes v3 pendientes de prueba Desktop
+5,Yoshiro,fecha,Duración promedio,runtime,05 · Duración promedio por fecha de estreno,Implementado; ajustes v3 pendientes de prueba Desktop
+6,Yoshiro,fecha,Popularidad promedio,popularity,06 · Popularidad promedio por fecha de estreno,Implementado; ajustes v3 pendientes de prueba Desktop
+7,Yoshiro,fecha,Diferencia bruta total,gross_difference,07 · Diferencia bruta total por fecha de estreno,Implementado; ajustes v3 pendientes de prueba Desktop
+8,Yoshiro,fecha,ROI mediano (promedio en tooltip),roi_approx,08 · ROI mediano por fecha de estreno,Implementado; ajustes v3 pendientes de prueba Desktop
+9,Yoshiro,genero,Presupuesto total,budget,09 · Presupuesto total por género,Implementado; ajustes v3 pendientes de prueba Desktop
+10,Yoshiro,genero,Ingresos totales,revenue,10 · Ingresos totales por género,Implementado; ajustes v3 pendientes de prueba Desktop
+11,Yoshiro,genero,Calificación promedio,vote_average,11 · Calificación promedio por género,Implementado; ajustes v3 pendientes de prueba Desktop
+12,Yoshiro,genero,Votos totales,vote_count,12 · Votos totales por género,Implementado; ajustes v3 pendientes de prueba Desktop
+13,Marco,genero,Duración promedio,runtime,13 · Duración promedio por género,Pendiente
+14,Marco,genero,Popularidad promedio,popularity,14 · Popularidad promedio por género,Pendiente
+15,Marco,genero,Diferencia bruta total,gross_difference,15 · Diferencia bruta total por género,Pendiente
+16,Marco,genero,ROI promedio,roi_approx,16 · ROI promedio por género,Pendiente
+17,Marco,pelicula,Presupuesto total,budget,17 · Presupuesto total por película,Pendiente
+18,Marco,pelicula,Ingresos totales,revenue,18 · Ingresos totales por película,Pendiente
+19,Marco,pelicula,Calificación promedio,vote_average,19 · Calificación promedio por película,Pendiente
+20,Marco,pelicula,Votos totales,vote_count,20 · Votos totales por película,Pendiente
+21,Marco,pelicula,Duración promedio,runtime,21 · Duración promedio por película,Pendiente
+22,Marco,pelicula,Popularidad promedio,popularity,22 · Popularidad promedio por película,Pendiente
+23,Marco,pelicula,Diferencia bruta total,gross_difference,23 · Diferencia bruta total por película,Pendiente
+24,Paco,pelicula,ROI promedio,roi_approx,24 · ROI promedio por película,Pendiente
+25,Paco,productora,Presupuesto total,budget,25 · Presupuesto total por productora,Pendiente
+26,Paco,productora,Ingresos totales,revenue,26 · Ingresos totales por productora,Pendiente
+27,Paco,productora,Calificación promedio,vote_average,27 · Calificación promedio por productora,Pendiente
+28,Paco,productora,Votos totales,vote_count,28 · Votos totales por productora,Pendiente
+29,Paco,productora,Duración promedio,runtime,29 · Duración promedio por productora,Pendiente
+30,Paco,productora,Popularidad promedio,popularity,30 · Popularidad promedio por productora,Pendiente
+31,Paco,productora,Diferencia bruta total,gross_difference,31 · Diferencia bruta total por productora,Pendiente
+32,Paco,productora,ROI promedio,roi_approx,32 · ROI promedio por productora,Pendiente
+33,Paco,pais,Presupuesto total,budget,33 · Presupuesto total por país de producción,Pendiente
+34,Paco,pais,Ingresos totales,revenue,34 · Ingresos totales por país de producción,Pendiente
+35,Filip,pais,Calificación promedio,vote_average,35 · Calificación promedio por país de producción,Pendiente
+36,Filip,pais,Votos totales,vote_count,36 · Votos totales por país de producción,Pendiente
+37,Filip,pais,Duración promedio,runtime,37 · Duración promedio por país de producción,Pendiente
+38,Filip,pais,Popularidad promedio,popularity,38 · Popularidad promedio por país de producción,Pendiente
+39,Filip,pais,Diferencia bruta total,gross_difference,39 · Diferencia bruta total por país de producción,Pendiente
+40,Filip,pais,ROI promedio,roi_approx,40 · ROI promedio por país de producción,Pendiente
+41,Filip,idioma,Presupuesto total,budget,41 · Presupuesto total por idioma hablado,Pendiente
+42,Filip,idioma,Ingresos totales,revenue,42 · Ingresos totales por idioma hablado,Pendiente
+43,Filip,idioma,Calificación promedio,vote_average,43 · Calificación promedio por idioma hablado,Pendiente
+44,Filip,idioma,Votos totales,vote_count,44 · Votos totales por idioma hablado,Pendiente
+45,Filip,idioma,Duración promedio,runtime,45 · Duración promedio por idioma hablado,Pendiente
+46,Gabo,idioma,Popularidad promedio,popularity,46 · Popularidad promedio por idioma hablado,Pendiente
+47,Gabo,idioma,Diferencia bruta total,gross_difference,47 · Diferencia bruta total por idioma hablado,Pendiente
+48,Gabo,idioma,ROI promedio,roi_approx,48 · ROI promedio por idioma hablado,Pendiente
+49,Gabo,palabra_clave,Presupuesto total,budget,49 · Presupuesto total por palabra clave,Pendiente
+50,Gabo,palabra_clave,Ingresos totales,revenue,50 · Ingresos totales por palabra clave,Pendiente
+51,Gabo,palabra_clave,Calificación promedio,vote_average,51 · Calificación promedio por palabra clave,Pendiente
+52,Gabo,palabra_clave,Votos totales,vote_count,52 · Votos totales por palabra clave,Pendiente
+53,Gabo,palabra_clave,Duración promedio,runtime,53 · Duración promedio por palabra clave,Pendiente
+54,Gabo,palabra_clave,Popularidad promedio,popularity,54 · Popularidad promedio por palabra clave,Pendiente
+55,Gabo,palabra_clave,Diferencia bruta total,gross_difference,55 · Diferencia bruta total por palabra clave,Pendiente
+56,Gabo,palabra_clave,ROI promedio,roi_approx,56 · ROI promedio por palabra clave,Pendiente

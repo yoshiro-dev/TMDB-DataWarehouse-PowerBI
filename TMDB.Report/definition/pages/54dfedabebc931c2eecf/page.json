@@ -1,0 +1,34 @@
+{
+  "name": "54dfedabebc931c2eecf",
+  "displayName": "51 · Calificación promedio por palabra clave",
+  "displayOption": "FitToPage",
+  "width": 1440,
+  "height": 900,
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.0.0/schema.json",
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#262C68'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}
