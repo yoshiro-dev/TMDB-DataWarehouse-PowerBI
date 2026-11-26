@@ -16,3 +16,14 @@ jobs:
       - name: Comprobar que RutaParquet no sea personal
         shell: powershell
         run: .\Configurar_Parquet.ps1 -VerificarRepositorio
+      - name: Comprobar los metadatos de apertura del PBIP
+        shell: powershell
+        run: |
+          foreach ($folder in 'TMDB.Report', 'TMDB.SemanticModel') {
+            $path = Join-Path $folder '.platform'
+            $platform = Get-Content -Raw -Encoding UTF8 -LiteralPath $path | ConvertFrom-Json
+            if ($platform.metadata.displayName -isnot [string] -or
+                [string]::IsNullOrWhiteSpace($platform.metadata.displayName)) {
+              throw "Falta metadata.displayName en $path."
+            }
+          }
