@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TMDB Revenue Predictor</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<header><small>APRENDIZAJE SUPERVISADO · AVANCE 01</small><h1>TMDB Revenue Predictor</h1><p>Fuente de conocimiento para estimar ingresos cinematográficos.</p></header>
+<section><h2>Fuente de conocimiento</h2><p>CSV derivado de la auditoría financiera TMDB.</p><div class="stats"><article><span>Películas disponibles</span><strong id="registros">—</strong></article><article><span>Período</span><strong id="periodo">—</strong></article><article><span>Estado</span><strong id="estado" role="status">Cargando…</strong></article></div></section>
+<section><h2>Variables del modelo propuesto</h2><p>Entradas: presupuesto, duración y año de estreno. Salida: ingresos. El identificador solo conserva la trazabilidad.</p><div class="table"><table><thead><tr><th>ID TMDB</th><th>Presupuesto</th><th>Duración (min)</th><th>Año</th><th>Ingresos</th></tr></thead><tbody id="muestra"></tbody></table></div></section>
+<section><h2>Siguiente etapa</h2><p>Preparar los tensores, separar datos de entrenamiento y prueba, e implementar la regresión lineal múltiple con TensorFlow.js.</p><p class="note">Todavía no se entrena un modelo ni se generan predicciones.</p></section>
+</main>
+<script>
+const fmt = new Intl.NumberFormat('es-MX');
+fetch('/api/fuente').then(r => { if (!r.ok) throw Error('Error de lectura'); return r.json(); }).then(data => {
+    document.getElementById('registros').textContent = fmt.format(data.registros);
+    document.getElementById('periodo').textContent = `${data.anioMin}–${data.anioMax}`;
+    document.getElementById('estado').textContent = 'CSV cargado';
+    data.muestra.forEach(p => {
+        const fila = document.createElement('tr');
+        [p.pelicula_id,p.budget,p.runtime,p.release_year,p.revenue].forEach((valor,i) => {
+            const celda = fila.insertCell(); celda.textContent = i === 1 || i === 4 ? fmt.format(valor) : valor;
+        });
+        document.getElementById('muestra').appendChild(fila);
+    });
+}).catch(() => { document.getElementById('estado').textContent = 'Error al cargar'; });
+</script>
+</body>
+</html>

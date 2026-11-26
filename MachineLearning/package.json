@@ -1,0 +1,8 @@
+{
+  "name": "tmdb-ml",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Avance 01: lectura de la fuente de conocimiento TMDB",
+  "scripts": { "start": "node app.js", "check": "node app.js --check" },
+  "engines": { "node": ">=18" }
+}
