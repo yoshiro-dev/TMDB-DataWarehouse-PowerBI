@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "f11d132d265d30bc06fd",
+  "position": {
+    "x": 0,
+    "y": 280.20986670127365,
+    "z": 23001,
+    "width": 1440.3470587144739,
+    "height": 314.38180166484364,
+    "tabOrder": 23001
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_palabra_clave"
+                    }
+                  },
+                  "Property": "palabra_clave"
+                }
+              },
+              "queryRef": "dim_palabra_clave.palabra_clave",
+              "nativeQueryRef": "palabra_clave",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_peliculas"
+                    }
+                  },
+                  "Property": "Ingresos totales"
+                }
+              },
+              "queryRef": "fact_peliculas.Ingresos totales",
+              "nativeQueryRef": "Ingresos totales"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fact_peliculas"
+                  }
+                },
+                "Property": "Ingresos totales"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    }
+  }
+}

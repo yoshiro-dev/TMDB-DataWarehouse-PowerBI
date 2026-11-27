@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "0117b2271523fca008da",
+  "position": {
+    "x": 0,
+    "y": 394.68584882923307,
+    "z": 23002,
+    "width": 1440.3470587144739,
+    "height": 276.7926732049167,
+    "tabOrder": 23002
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_idioma"
+                    }
+                  },
+                  "Property": "idioma"
+                }
+              },
+              "queryRef": "dim_idioma.idioma",
+              "nativeQueryRef": "idioma",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_peliculas"
+                    }
+                  },
+                  "Property": "ROI promedio"
+                }
+              },
+              "queryRef": "fact_peliculas.ROI promedio",
+              "nativeQueryRef": "ROI promedio"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fact_peliculas"
+                  }
+                },
+                "Property": "ROI promedio"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    }
+  }
+}

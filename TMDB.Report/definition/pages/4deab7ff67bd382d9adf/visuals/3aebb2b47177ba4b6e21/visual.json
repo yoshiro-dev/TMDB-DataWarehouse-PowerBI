@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "3aebb2b47177ba4b6e21",
+  "position": {
+    "x": 0,
+    "y": 117.89317562431636,
+    "z": 23001,
+    "width": 1440.3470587144739,
+    "height": 276.7926732049167,
+    "tabOrder": 23001
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_idioma"
+                    }
+                  },
+                  "Property": "idioma"
+                }
+              },
+              "queryRef": "dim_idioma.idioma",
+              "nativeQueryRef": "idioma",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_peliculas"
+                    }
+                  },
+                  "Property": "ROI mediano"
+                }
+              },
+              "queryRef": "fact_peliculas.ROI mediano",
+              "nativeQueryRef": "ROI mediano"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fact_peliculas"
+                  }
+                },
+                "Property": "ROI mediano"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    }
+  }
+}

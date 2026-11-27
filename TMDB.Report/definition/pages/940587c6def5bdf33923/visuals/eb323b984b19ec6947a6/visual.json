@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "eb323b984b19ec6947a6",
+  "position": {
+    "x": 0,
+    "y": 280.20986670127365,
+    "z": 23001,
+    "width": 1440.3470587144739,
+    "height": 310.96460816848662,
+    "tabOrder": 23001
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_palabra_clave"
+                    }
+                  },
+                  "Property": "palabra_clave"
+                }
+              },
+              "queryRef": "dim_palabra_clave.palabra_clave",
+              "nativeQueryRef": "palabra_clave",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_peliculas"
+                    }
+                  },
+                  "Property": "Duración promedio"
+                }
+              },
+              "queryRef": "fact_peliculas.Duración promedio",
+              "nativeQueryRef": "Duración promedio"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fact_peliculas"
+                  }
+                },
+                "Property": "Duración promedio"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    }
+  }
+}

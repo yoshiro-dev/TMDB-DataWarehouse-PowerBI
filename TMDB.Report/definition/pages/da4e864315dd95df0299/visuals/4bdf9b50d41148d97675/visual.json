@@ -1,0 +1,79 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "4bdf9b50d41148d97675",
+  "position": {
+    "x": 0,
+    "y": 280.20986670127365,
+    "z": 23001,
+    "width": 1440.3470587144739,
+    "height": 317.79899516120065,
+    "tabOrder": 23001
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_palabra_clave"
+                    }
+                  },
+                  "Property": "palabra_clave"
+                }
+              },
+              "queryRef": "dim_palabra_clave.palabra_clave",
+              "nativeQueryRef": "palabra_clave"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_peliculas"
+                    }
+                  },
+                  "Property": "Diferencia bruta total"
+                }
+              },
+              "queryRef": "fact_peliculas.Diferencia bruta total",
+              "nativeQueryRef": "Diferencia bruta total"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_peliculas"
+                    }
+                  },
+                  "Property": "Ingresos totales"
+                }
+              },
+              "queryRef": "fact_peliculas.Ingresos totales",
+              "nativeQueryRef": "Ingresos totales"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_peliculas"
+                    }
+                  },
+                  "Property": "Presupuesto total"
+                }
+              },
+              "queryRef": "fact_peliculas.Presupuesto total",
+              "nativeQueryRef": "Presupuesto total"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

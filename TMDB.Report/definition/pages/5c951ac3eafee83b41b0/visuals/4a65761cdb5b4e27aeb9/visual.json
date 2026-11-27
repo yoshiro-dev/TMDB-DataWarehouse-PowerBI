@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "4a65761cdb5b4e27aeb9",
+  "position": {
+    "x": 0,
+    "y": 223.82617401138324,
+    "z": 23001,
+    "width": 1440.3470587144739,
+    "height": 293.87864068670166,
+    "tabOrder": 23001
+  },
+  "visual": {
+    "visualType": "treemap",
+    "query": {
+      "queryState": {
+        "Group": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_palabra_clave"
+                    }
+                  },
+                  "Property": "palabra_clave"
+                }
+              },
+              "queryRef": "dim_palabra_clave.palabra_clave",
+              "nativeQueryRef": "palabra_clave",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_peliculas"
+                    }
+                  },
+                  "Property": "Presupuesto total"
+                }
+              },
+              "queryRef": "fact_peliculas.Presupuesto total",
+              "nativeQueryRef": "Presupuesto total"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "b27ab55c23a3f0d9a526",
+  "position": {
+    "x": 0,
+    "y": 290.46144719034464,
+    "z": 23001,
+    "width": 1440.3470587144739,
+    "height": 292.17004393852318,
+    "tabOrder": 23001
+  },
+  "visual": {
+    "visualType": "donutChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_palabra_clave"
+                    }
+                  },
+                  "Property": "palabra_clave"
+                }
+              },
+              "queryRef": "dim_palabra_clave.palabra_clave",
+              "nativeQueryRef": "palabra_clave",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_peliculas"
+                    }
+                  },
+                  "Property": "Votos totales"
+                }
+              },
+              "queryRef": "fact_peliculas.Votos totales",
+              "nativeQueryRef": "Votos totales"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fact_peliculas"
+                  }
+                },
+                "Property": "Votos totales"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    }
+  }
+}
