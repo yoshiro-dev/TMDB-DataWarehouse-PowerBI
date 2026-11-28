@@ -312,13 +312,6 @@
                   "Value": "14D"
                 }
               }
-            },
-            "width": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
             }
           }
         }
