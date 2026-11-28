@@ -3,11 +3,11 @@
   "name": "b7eb378d93c1b4a99786",
   "position": {
     "x": 0,
-    "y": 158.89949758060033,
-    "z": 23001,
-    "width": 1440.3470587144739,
-    "height": 568.96271714343982,
-    "tabOrder": 23001
+    "y": 262.96044032914239,
+    "z": 7000,
+    "width": 1440.3446054157541,
+    "height": 408.86107173756977,
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "decompositionTreeVisual",
@@ -47,6 +47,21 @@
               "queryRef": "dim_palabra_clave.palabra_clave",
               "nativeQueryRef": "palabra_clave",
               "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_genero"
+                    }
+                  },
+                  "Property": "genero"
+                }
+              },
+              "queryRef": "dim_genero.genero",
+              "nativeQueryRef": "genero",
+              "active": false
             }
           ]
         }
@@ -82,9 +97,13 @@
             ],
             "isCollapsed": true,
             "isPinned": true,
-            "AIInformation": {
-              "method": "MaxSplit"
-            }
+            "isLocked": true
+          },
+          {
+            "queryRefs": [
+              "dim_genero.genero"
+            ],
+            "isCollapsed": true
           }
         ],
         "root": {}
@@ -97,7 +116,7 @@
             "effectiveBarsPerLevel": {
               "expr": {
                 "Literal": {
-                  "Value": "7L"
+                  "Value": "4L"
                 }
               }
             }
@@ -140,6 +159,36 @@
                 }
               }
             ]
+          }
+        }
+      ],
+      "dataBars": [
+        {
+          "properties": {
+            "positiveBarColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 8,
+                      "Percent": 0.2
+                    }
+                  }
+                }
+              }
+            },
+            "dataBarBackgroundColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       ]

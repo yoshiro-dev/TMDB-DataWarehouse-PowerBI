@@ -4,10 +4,10 @@
   "position": {
     "x": 0,
     "y": 290.46144719034464,
-    "z": 23001,
+    "z": 7000,
     "width": 1440.3470587144739,
     "height": 292.17004393852318,
-    "tabOrder": 23001
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "donutChart",
@@ -69,6 +69,46 @@
         ],
         "isDefaultSort": true
       }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "labelStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Percent of total'"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ]
+          }
+        }
+      ]
     }
   }
 }

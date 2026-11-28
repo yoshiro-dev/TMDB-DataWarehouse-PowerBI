@@ -6,12 +6,11 @@
     "y": 624,
     "width": 274,
     "height": 52,
-    "z": 4009,
-    "tabOrder": 4009
+    "z": 16000,
+    "tabOrder": 16000
   },
   "visual": {
     "visualType": "actionButton",
-    "drillFilterOtherVisuals": true,
     "objects": {
       "text": [
         {
@@ -216,7 +215,8 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   },
   "howCreated": "InsertVisualButton"
 }

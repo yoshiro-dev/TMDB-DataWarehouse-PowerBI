@@ -3,11 +3,11 @@
   "name": "4a65761cdb5b4e27aeb9",
   "position": {
     "x": 0,
-    "y": 223.82617401138324,
-    "z": 23001,
-    "width": 1440.3470587144739,
-    "height": 293.87864068670166,
-    "tabOrder": 23001
+    "y": 290.10474384698932,
+    "z": 7000,
+    "width": 1440.3446054157541,
+    "height": 293.49778178672017,
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "treemap",
@@ -32,6 +32,38 @@
             }
           ]
         },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_peliculas"
+                    }
+                  },
+                  "Property": "Con presupuesto"
+                }
+              },
+              "queryRef": "fact_peliculas.Con presupuesto",
+              "nativeQueryRef": "Con presupuesto"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_peliculas"
+                    }
+                  },
+                  "Property": "Películas"
+                }
+              },
+              "queryRef": "fact_peliculas.Películas",
+              "nativeQueryRef": "Películas"
+            }
+          ]
+        },
         "Values": {
           "projections": [
             {
@@ -51,6 +83,81 @@
           ]
         }
       }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "FillRule": {
+                      "Input": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "fact_peliculas"
+                            }
+                          },
+                          "Property": "Presupuesto total"
+                        }
+                      },
+                      "FillRule": {
+                        "linearGradient2": {
+                          "min": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#41a4ff'"
+                              }
+                            }
+                          },
+                          "max": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#e1c233'"
+                              }
+                            }
+                          },
+                          "nullColoringStrategy": {
+                            "strategy": {
+                              "Literal": {
+                                "Value": "'asZero'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ]
+          }
+        }
+      ]
     }
   }
 }

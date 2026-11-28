@@ -1,38 +1,19 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
-  "name": "3aebb2b47177ba4b6e21",
+  "name": "763ea3ec8194a7440e47",
   "position": {
     "x": 0,
-    "y": 117.89317562431636,
-    "z": 23001,
-    "width": 1440.3470587144739,
-    "height": 276.7926732049167,
-    "tabOrder": 23001
+    "y": 128.93544170977304,
+    "z": 8000,
+    "width": 347.7863888224141,
+    "height": 150.99018831802368,
+    "tabOrder": 8000
   },
   "visual": {
-    "visualType": "lineChart",
+    "visualType": "card",
     "query": {
       "queryState": {
-        "Category": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "dim_idioma"
-                    }
-                  },
-                  "Property": "idioma"
-                }
-              },
-              "queryRef": "dim_idioma.idioma",
-              "nativeQueryRef": "idioma",
-              "active": true
-            }
-          ]
-        },
-        "Y": {
+        "Values": {
           "projections": [
             {
               "field": {
@@ -42,11 +23,11 @@
                       "Entity": "fact_peliculas"
                     }
                   },
-                  "Property": "ROI mediano"
+                  "Property": "Ingresos totales"
                 }
               },
-              "queryRef": "fact_peliculas.ROI mediano",
-              "nativeQueryRef": "ROI mediano"
+              "queryRef": "fact_peliculas.Ingresos totales",
+              "nativeQueryRef": "Ingresos totales"
             }
           ]
         }
@@ -61,7 +42,7 @@
                     "Entity": "fact_peliculas"
                   }
                 },
-                "Property": "ROI mediano"
+                "Property": "Ingresos totales"
               }
             },
             "direction": "Descending"
@@ -69,6 +50,26 @@
         ],
         "isDefaultSort": true
       }
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0.2
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
     }
   }
 }

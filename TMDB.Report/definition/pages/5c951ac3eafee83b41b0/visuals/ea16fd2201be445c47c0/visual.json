@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "ea16fd2201be445c47c0",
+  "position": {
+    "x": 288.40822487712387,
+    "y": 583.60252563370955,
+    "z": 12001,
+    "width": 368.14461646079934,
+    "height": 245.99525063048802,
+    "tabOrder": 12001
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_genero"
+                    }
+                  },
+                  "Property": "genero"
+                }
+              },
+              "queryRef": "dim_genero.genero",
+              "nativeQueryRef": "genero",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Basic'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

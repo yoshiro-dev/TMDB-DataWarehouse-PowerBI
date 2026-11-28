@@ -11,7 +11,6 @@
   },
   "visual": {
     "visualType": "textbox",
-    "drillFilterOtherVisuals": true,
     "objects": {
       "general": [
         {
@@ -20,11 +19,23 @@
               {
                 "textRuns": [
                   {
-                    "value": "Medida: ROI promedio (%) · Dimensión: Idioma hablado.\nResponsable: Gabo. Esta página no se contabiliza como visualizador implementado.",
+                    "value": "Medida: ROI promedio (%) · Dimensión: Idioma hablado.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "17pt",
-                      "color": "#FFFFFF"
+                      "color": "#ffffff"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Responsable: Gabo. Esta página no se contabiliza como visualizador implementado.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "17pt",
+                      "color": "#ffffff"
                     }
                   }
                 ]
@@ -48,6 +59,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }
