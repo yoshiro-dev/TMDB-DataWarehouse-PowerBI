@@ -1,10 +1,10 @@
 {
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.0.0/schema.json",
   "name": "9f5d325b3a061ee89ea2",
   "displayName": "09 · Presupuesto total por género",
   "displayOption": "FitToPage",
-  "width": 1440,
   "height": 900,
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.0.0/schema.json",
+  "width": 1440,
   "objects": {
     "background": [
       {
