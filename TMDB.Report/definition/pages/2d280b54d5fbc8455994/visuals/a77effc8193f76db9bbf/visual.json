@@ -1,0 +1,121 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "a77effc8193f76db9bbf",
+  "position": {
+    "x": 639.58765163926887,
+    "y": 600.56771533236383,
+    "z": 13000,
+    "width": 800.75695377648515,
+    "height": 149.29366934815826,
+    "tabOrder": 13000
+  },
+  "visual": {
+    "visualType": "funnel",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_idioma"
+                    }
+                  },
+                  "Property": "idioma"
+                }
+              },
+              "queryRef": "dim_idioma.idioma",
+              "nativeQueryRef": "idioma",
+              "active": true
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_peliculas"
+                    }
+                  },
+                  "Property": "Películas"
+                }
+              },
+              "queryRef": "fact_peliculas.Películas",
+              "nativeQueryRef": "Películas"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_peliculas"
+                    }
+                  },
+                  "Property": "Con dato: popularity"
+                }
+              },
+              "queryRef": "fact_peliculas.Con dato: popularity",
+              "nativeQueryRef": "Con dato: popularity"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_peliculas"
+                    }
+                  },
+                  "Property": "Popularidad promedio"
+                }
+              },
+              "queryRef": "fact_peliculas.Popularidad promedio",
+              "nativeQueryRef": "Popularidad promedio"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fact_peliculas"
+                  }
+                },
+                "Property": "Popularidad promedio"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "funnelLabelStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Percent of first'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

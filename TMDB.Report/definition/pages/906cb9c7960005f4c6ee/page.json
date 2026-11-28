@@ -1,10 +1,10 @@
 {
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.0.0/schema.json",
   "name": "906cb9c7960005f4c6ee",
   "displayName": "32 · ROI promedio por productora",
   "displayOption": "FitToPage",
-  "width": 1440,
   "height": 900,
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.0.0/schema.json",
+  "width": 1440,
   "objects": {
     "background": [
       {

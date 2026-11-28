@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "7d1434e2b7db530219dc",
+  "position": {
+    "x": 0,
+    "y": 671.8215120667121,
+    "z": 11001,
+    "width": 276.53259208806583,
+    "height": 149.29366934815826,
+    "tabOrder": 11001
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_peliculas"
+                    }
+                  },
+                  "Property": "calidad_financiera"
+                }
+              },
+              "queryRef": "fact_peliculas.calidad_financiera",
+              "nativeQueryRef": "calidad_financiera",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Basic'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

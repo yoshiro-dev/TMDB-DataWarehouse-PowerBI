@@ -1,10 +1,10 @@
 {
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.0.0/schema.json",
   "name": "d749ded5ea4199bec5c7",
   "displayName": "06 · Popularidad promedio por fecha de estreno",
   "displayOption": "FitToPage",
-  "width": 1440,
   "height": 900,
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.0.0/schema.json",
+  "width": 1440,
   "objects": {
     "background": [
       {

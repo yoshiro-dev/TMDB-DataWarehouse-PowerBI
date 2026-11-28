@@ -6,12 +6,11 @@
     "y": 355,
     "width": 1030,
     "height": 135,
-    "z": 1000,
-    "tabOrder": 1000
+    "z": 2000,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "textbox",
-    "drillFilterOtherVisuals": true,
     "objects": {
       "general": [
         {
@@ -48,6 +47,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

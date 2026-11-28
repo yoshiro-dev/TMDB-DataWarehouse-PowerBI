@@ -1,10 +1,10 @@
 {
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.0.0/schema.json",
   "name": "6ec09a0c01da222d1663",
   "displayName": "TMDB DW · Índice general",
   "displayOption": "FitToPage",
-  "width": 1440,
   "height": 900,
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.0.0/schema.json",
+  "width": 1440,
   "objects": {
     "background": [
       {

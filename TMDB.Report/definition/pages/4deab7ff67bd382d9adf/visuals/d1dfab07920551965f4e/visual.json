@@ -1,0 +1,88 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "d1dfab07920551965f4e",
+  "position": {
+    "x": 0,
+    "y": 278.22911105793128,
+    "z": 7000,
+    "width": 1440.3446054157541,
+    "height": 361.35854058133759,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_idioma"
+                    }
+                  },
+                  "Property": "idioma"
+                }
+              },
+              "queryRef": "dim_idioma.idioma",
+              "nativeQueryRef": "idioma",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_peliculas"
+                    }
+                  },
+                  "Property": "ROI promedio"
+                }
+              },
+              "queryRef": "fact_peliculas.ROI promedio",
+              "nativeQueryRef": "ROI promedio"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_peliculas"
+                    }
+                  },
+                  "Property": "ROI mediano"
+                }
+              },
+              "queryRef": "fact_peliculas.ROI mediano",
+              "nativeQueryRef": "ROI mediano"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fact_peliculas"
+                  }
+                },
+                "Property": "ROI promedio"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    }
+  }
+}

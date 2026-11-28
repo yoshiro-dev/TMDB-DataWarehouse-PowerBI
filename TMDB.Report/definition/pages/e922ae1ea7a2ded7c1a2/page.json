@@ -1,10 +1,10 @@
 {
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.0.0/schema.json",
   "name": "e922ae1ea7a2ded7c1a2",
   "displayName": "31 · Diferencia bruta total por productora",
   "displayOption": "FitToPage",
-  "width": 1440,
   "height": 900,
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.0.0/schema.json",
+  "width": 1440,
   "objects": {
     "background": [
       {
