@@ -1,0 +1,74 @@
+table dim_fecha
+	lineageTag: d900ab42-0ed0-5303-80a2-4277a1748ac9
+
+	column fecha_key
+		dataType: int64
+		isHidden
+		lineageTag: 99b0aec9-7251-52f3-9bbe-5379826d40ff
+		summarizeBy: none
+		sourceColumn: fecha_key
+
+	column fecha
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		lineageTag: 85d3e607-efd2-510e-b618-78e6aaf50c76
+		summarizeBy: none
+		sourceColumn: fecha
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column anio
+		dataType: int64
+		lineageTag: 9647af59-d5a5-5847-8f7d-866aa1a04695
+		summarizeBy: none
+		sourceColumn: anio
+
+	column trimestre
+		dataType: int64
+		lineageTag: a74cd64b-0f70-5067-9f62-040f6ee7a551
+		summarizeBy: none
+		sourceColumn: trimestre
+
+	column mes
+		dataType: int64
+		lineageTag: a9095024-c5bf-56c6-836f-9f042e10ae5a
+		summarizeBy: none
+		sourceColumn: mes
+
+	column dia
+		dataType: int64
+		lineageTag: c7af99c1-5c91-5620-b3e5-b68a943ea3a7
+		summarizeBy: none
+		sourceColumn: dia
+
+	column dia_semana
+		dataType: int64
+		lineageTag: 1dabf7b8-9621-55ec-a639-0bd2019fbfb4
+		summarizeBy: none
+		sourceColumn: dia_semana
+
+	column decada
+		dataType: int64
+		lineageTag: 71665cdd-5a4b-5f40-b91e-bb08e383a89f
+		summarizeBy: none
+		sourceColumn: decada
+
+	/// Corte de análisis fijo: 26/11/2026, no es la fecha de captura del dataset. No elimina registros.
+	column periodo_estreno
+		dataType: string
+		lineageTag: fa9f62b8-dcf4-5e2f-bb01-2392e1538b05
+		summarizeBy: none
+		sourceColumn: periodo_estreno
+
+	partition dim_fecha = m
+		mode: import
+		source =
+				let
+				    Origen = Parquet.Document(File.Contents(RutaParquet & "\dim_fecha.parquet")),
+				    Tipos = Table.TransformColumnTypes(Origen, {{"fecha_key", Int64.Type}, {"fecha", type date}, {"anio", Int64.Type}, {"trimestre", Int64.Type}, {"mes", Int64.Type}, {"dia", Int64.Type}, {"dia_semana", Int64.Type}, {"decada", Int64.Type}}),
+				    Clasificacion = Table.AddColumn(Tipos, "periodo_estreno", each if [fecha] = null then "Sin fecha" else if [fecha] < #date(1888, 1, 1) then "Anterior a 1888" else if [fecha] > #date(2026, 11, 26) then "Posterior al corte" else "Histórico", type text)
+				in
+				    Clasificacion
+
+	annotation PBI_ResultType = Table
+

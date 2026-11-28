@@ -1,0 +1,53 @@
+relationship e69ec562-9b40-5625-a9bb-b5a9a2f8a24a
+	fromColumn: fact_peliculas.fecha_key
+	toColumn: dim_fecha.fecha_key
+
+relationship 83dfabb9-07e8-512f-82e4-b8d1dcaba445
+	fromColumn: fact_peliculas.pelicula_key
+	toColumn: dim_pelicula.pelicula_key
+
+relationship e2251003-a4cf-5554-aa6b-7c626ca0da39
+	crossFilteringBehavior: bothDirections
+	fromColumn: bridge_pelicula_genero.pelicula_key
+	toColumn: fact_peliculas.pelicula_key
+
+relationship 3cda4a97-4942-5bf9-8f0d-4b1d3f6fd0b1
+	fromColumn: bridge_pelicula_genero.genero_key
+	toColumn: dim_genero.genero_key
+
+relationship 6c33a731-cd4c-587e-b524-3302913723c1
+	crossFilteringBehavior: bothDirections
+	fromColumn: bridge_pelicula_productora.pelicula_key
+	toColumn: fact_peliculas.pelicula_key
+
+relationship 3529426a-20eb-564b-b6f1-209c6f0470b5
+	fromColumn: bridge_pelicula_productora.productora_key
+	toColumn: dim_productora.productora_key
+
+relationship b340e057-931e-546b-b548-8c02c9ee8f7d
+	crossFilteringBehavior: bothDirections
+	fromColumn: bridge_pelicula_pais.pelicula_key
+	toColumn: fact_peliculas.pelicula_key
+
+relationship 8eae6f9e-eb7c-5798-af8f-aa6f0d125afb
+	fromColumn: bridge_pelicula_pais.pais_key
+	toColumn: dim_pais.pais_key
+
+relationship aacf04e6-b8f1-5872-8f9c-a89e1d3037cb
+	crossFilteringBehavior: bothDirections
+	fromColumn: bridge_pelicula_idioma.pelicula_key
+	toColumn: fact_peliculas.pelicula_key
+
+relationship 9b625781-848c-57fa-ac63-a531b710b332
+	fromColumn: bridge_pelicula_idioma.idioma_key
+	toColumn: dim_idioma.idioma_key
+
+relationship 644def9a-6675-5df5-bffa-c1a36bf2104c
+	crossFilteringBehavior: bothDirections
+	fromColumn: bridge_pelicula_palabra_clave.pelicula_key
+	toColumn: fact_peliculas.pelicula_key
+
+relationship 0ca70bfc-3da6-5bdb-adbc-ec6dde34f1d7
+	fromColumn: bridge_pelicula_palabra_clave.palabra_clave_key
+	toColumn: dim_palabra_clave.palabra_clave_key
+

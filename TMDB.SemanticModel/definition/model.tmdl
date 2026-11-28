@@ -1,0 +1,29 @@
+model Model
+	culture: es-MX
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-MX
+	dataAccessOptions
+		legacyRedirects
+
+annotation PBI_QueryOrder = ["dim_fecha","dim_pelicula","dim_genero","dim_productora","dim_pais","dim_idioma","dim_palabra_clave","fact_peliculas","bridge_pelicula_genero","bridge_pelicula_productora","bridge_pelicula_pais","bridge_pelicula_idioma","bridge_pelicula_palabra_clave","RutaParquet"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table dim_fecha
+ref table dim_pelicula
+ref table dim_genero
+ref table dim_productora
+ref table dim_pais
+ref table dim_idioma
+ref table dim_palabra_clave
+ref table fact_peliculas
+ref table bridge_pelicula_genero
+ref table bridge_pelicula_productora
+ref table bridge_pelicula_pais
+ref table bridge_pelicula_idioma
+ref table bridge_pelicula_palabra_clave
+
+ref cultureInfo es-MX
+

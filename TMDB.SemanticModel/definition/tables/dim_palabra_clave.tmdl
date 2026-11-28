@@ -1,0 +1,27 @@
+table dim_palabra_clave
+	lineageTag: 329acede-f4b6-534e-86ad-78c74af46c4f
+
+	column palabra_clave_key
+		dataType: int64
+		isHidden
+		lineageTag: 0b2550fe-5dec-5b27-b3e0-b190cc232c9d
+		summarizeBy: none
+		sourceColumn: palabra_clave_key
+
+	column palabra_clave
+		dataType: string
+		lineageTag: 6331aecf-0ad8-50af-85d5-a7924dc4d942
+		summarizeBy: none
+		sourceColumn: palabra_clave
+
+	partition dim_palabra_clave = m
+		mode: import
+		source =
+				let
+				    Origen = Parquet.Document(File.Contents(RutaParquet & "\dim_palabra_clave.parquet")),
+				    Tipos = Table.TransformColumnTypes(Origen, {{"palabra_clave_key", Int64.Type}, {"palabra_clave", type text}})
+				in
+				    Tipos
+
+	annotation PBI_ResultType = Table
+

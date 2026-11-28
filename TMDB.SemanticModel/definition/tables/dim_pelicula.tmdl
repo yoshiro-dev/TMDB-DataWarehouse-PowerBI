@@ -1,0 +1,94 @@
+table dim_pelicula
+	lineageTag: 2de18465-51a0-5052-910c-1c9ffba9c1ee
+
+	column pelicula_key
+		dataType: int64
+		isHidden
+		lineageTag: b20e952d-2ad3-56b0-a736-97a8a4b2391f
+		summarizeBy: none
+		sourceColumn: pelicula_key
+
+	column title
+		dataType: string
+		lineageTag: 062cde7c-4d23-52e8-959c-786a5e6cb386
+		summarizeBy: none
+		sourceColumn: title
+
+	column original_title
+		dataType: string
+		lineageTag: f8e63f29-b68e-5df4-84ce-ef2e02a88bf8
+		summarizeBy: none
+		sourceColumn: original_title
+
+	column original_language
+		dataType: string
+		lineageTag: 3ce3b11a-e541-548a-832d-f1d770c43b51
+		summarizeBy: none
+		sourceColumn: original_language
+
+	column status
+		dataType: string
+		lineageTag: ce97e634-d703-57bb-997d-36b09ee25e61
+		summarizeBy: none
+		sourceColumn: status
+
+	column adult
+		dataType: boolean
+		lineageTag: e6661fa7-3592-5010-86af-5f100c9349f9
+		summarizeBy: none
+		sourceColumn: adult
+
+	column imdb_id
+		dataType: string
+		lineageTag: ae378389-275b-5e39-8e29-dd3d1c04b18a
+		summarizeBy: none
+		sourceColumn: imdb_id
+
+	column source_row
+		dataType: int64
+		isHidden
+		lineageTag: 95e833cb-7786-58d3-9115-a776e31c6b22
+		summarizeBy: none
+		sourceColumn: source_row
+
+	column budget_known
+		dataType: boolean
+		lineageTag: 0ff2c44e-4b28-5440-a145-94ded627632d
+		summarizeBy: none
+		sourceColumn: budget_known
+
+	column revenue_known
+		dataType: boolean
+		lineageTag: 3fbc3070-f1a8-51db-89b5-5b79211f7aa7
+		summarizeBy: none
+		sourceColumn: revenue_known
+
+	column financial_candidate
+		dataType: boolean
+		lineageTag: b9cc5bc8-8f2d-57ce-a953-04525236575e
+		summarizeBy: none
+		sourceColumn: financial_candidate
+
+	column review_flag
+		dataType: string
+		lineageTag: ccf031ce-6545-568e-828e-c480e9739ad6
+		summarizeBy: none
+		sourceColumn: review_flag
+
+	column completeness
+		dataType: int64
+		lineageTag: 0a49e8d7-29ce-5128-9e7f-15ef436c9e72
+		summarizeBy: none
+		sourceColumn: completeness
+
+	partition dim_pelicula = m
+		mode: import
+		source =
+				let
+				    Origen = Parquet.Document(File.Contents(RutaParquet & "\dim_pelicula.parquet")),
+				    Tipos = Table.TransformColumnTypes(Origen, {{"pelicula_key", Int64.Type}, {"title", type text}, {"original_title", type text}, {"original_language", type text}, {"status", type text}, {"adult", type logical}, {"imdb_id", type text}, {"source_row", Int64.Type}, {"budget_known", type logical}, {"revenue_known", type logical}, {"financial_candidate", type logical}, {"review_flag", type text}, {"completeness", Int64.Type}})
+				in
+				    Tipos
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,178 @@
+table fact_peliculas
+	lineageTag: e00aef31-b3ff-53f8-959f-ca74f0907cd0
+
+	/// Agregación de valores conocidos; nulos no se sustituyen por cero. ROI y diferencia bruta no equivalen a beneficio neto.
+	measure 'Presupuesto total' = SUM('fact_peliculas'[budget])
+		formatString: $#,0
+		lineageTag: c674cffb-aab1-5da4-8e3c-78d3fa21911c
+
+	/// Agregación de valores conocidos; nulos no se sustituyen por cero. ROI y diferencia bruta no equivalen a beneficio neto.
+	measure 'Ingresos totales' = SUM('fact_peliculas'[revenue])
+		formatString: $#,0
+		lineageTag: a45d9f0b-1269-55f5-b953-b9a8da476674
+
+	/// Agregación de valores conocidos; nulos no se sustituyen por cero. ROI y diferencia bruta no equivalen a beneficio neto.
+	measure 'Calificación promedio' = AVERAGE('fact_peliculas'[vote_average])
+		formatString: 0.00
+		lineageTag: a7c8422b-f215-5147-968d-74670631524e
+
+	/// Agregación de valores conocidos; nulos no se sustituyen por cero. ROI y diferencia bruta no equivalen a beneficio neto.
+	measure 'Votos totales' = SUM('fact_peliculas'[vote_count])
+		formatString: #,0
+		lineageTag: 1f7fc9b4-b1eb-5266-a602-acaa398c3356
+
+	/// Agregación de valores conocidos; nulos no se sustituyen por cero. ROI y diferencia bruta no equivalen a beneficio neto.
+	measure 'Duración promedio' = AVERAGE('fact_peliculas'[runtime])
+		formatString: 0.0
+		lineageTag: 16ea2003-4162-569f-895e-0d536e9881dc
+
+	/// Agregación de valores conocidos; nulos no se sustituyen por cero. ROI y diferencia bruta no equivalen a beneficio neto.
+	measure 'Popularidad promedio' = AVERAGE('fact_peliculas'[popularity])
+		formatString: 0.00
+		lineageTag: ec0d390b-cf7d-57e4-961b-da7d466b9384
+
+	/// Agregación de valores conocidos; nulos no se sustituyen por cero. ROI y diferencia bruta no equivalen a beneficio neto.
+	measure 'Diferencia bruta total' = SUM('fact_peliculas'[gross_difference])
+		formatString: $#,0;($#,0);$0
+		lineageTag: a7517171-f448-5805-92e6-59e269b6367a
+
+	/// Agregación de valores conocidos; nulos no se sustituyen por cero. ROI y diferencia bruta no equivalen a beneficio neto.
+	measure 'ROI promedio' = AVERAGE('fact_peliculas'[roi_approx])
+		formatString: 0.0%
+		lineageTag: 29de1860-af4e-5321-890e-95ca96828a1d
+
+	measure Películas = DISTINCTCOUNT(fact_peliculas[pelicula_key])
+		formatString: #,0
+		lineageTag: 9ae2271a-7371-5b3d-8531-41ad058556e4
+
+	measure 'Con presupuesto' = COUNT(fact_peliculas[budget])
+		formatString: #,0
+		lineageTag: 14f0ef39-b3e8-5f73-bdd3-91172d7ebc68
+
+	measure 'Con ingresos' = COUNT(fact_peliculas[revenue])
+		formatString: #,0
+		lineageTag: 39782fd7-adcb-5280-af14-be1a34f9a0c1
+
+	/// Candidatas del ETL dentro del contexto, respeta el segmentador de candidata ML.
+	measure 'Candidatas ML' = COALESCE(CALCULATE([Películas], KEEPFILTERS(dim_pelicula[financial_candidate] = TRUE())), 0)
+		formatString: #,0
+		lineageTag: 2749d899-11cd-5fdb-95e8-8b967c2a106c
+
+	measure 'Con dato: budget' = COUNT(fact_peliculas[budget])
+		formatString: #,0
+		lineageTag: 7bef9a5a-4a3b-56d5-a34a-b17cfd494e8e
+
+	measure 'Con dato: revenue' = COUNT(fact_peliculas[revenue])
+		formatString: #,0
+		lineageTag: baa85392-33d4-520a-834c-05569bd646f7
+
+	measure 'Con dato: vote_average' = COUNT(fact_peliculas[vote_average])
+		formatString: #,0
+		lineageTag: 3498b69d-0c32-52de-bc49-88b094529122
+
+	measure 'Con dato: vote_count' = COUNT(fact_peliculas[vote_count])
+		formatString: #,0
+		lineageTag: 949e77e7-7c83-503e-aef1-896a69e2d368
+
+	measure 'Con dato: runtime' = COUNT(fact_peliculas[runtime])
+		formatString: #,0
+		lineageTag: 932d709f-e00f-5be9-9996-30c6e0f32f4a
+
+	measure 'Con dato: popularity' = COUNT(fact_peliculas[popularity])
+		formatString: #,0
+		lineageTag: ed150d07-5de6-5d76-ab94-1932003fd785
+
+	measure 'Con dato: gross_difference' = COUNT(fact_peliculas[gross_difference])
+		formatString: #,0
+		lineageTag: 4ad77fd7-ef82-5568-a13a-68badadab95d
+
+	measure 'Con dato: roi_approx' = COUNT(fact_peliculas[roi_approx])
+		formatString: #,0
+		lineageTag: d72dea19-778f-5d85-a77a-8334b2a3f705
+
+	/// Mediana del ROI aproximado de películas con ambos importes, resistente a valores extremos. No es beneficio neto.
+	measure 'ROI mediano' = MEDIAN('fact_peliculas'[roi_approx])
+		formatString: 0.0%
+		lineageTag: a44710c3-bbbc-50ea-a977-43d0df8ed814
+
+	column pelicula_key
+		dataType: int64
+		isHidden
+		lineageTag: 32101b64-77b3-5510-b9fe-e27e9409bf1e
+		summarizeBy: none
+		sourceColumn: pelicula_key
+
+	column fecha_key
+		dataType: int64
+		isHidden
+		lineageTag: 1f941760-5fb8-577e-815c-ccfbc02b5716
+		summarizeBy: none
+		sourceColumn: fecha_key
+
+	column budget
+		dataType: int64
+		lineageTag: b73a333a-1d93-5d5d-8f89-3a613513832f
+		summarizeBy: none
+		sourceColumn: budget
+
+	column revenue
+		dataType: int64
+		lineageTag: 89ffec25-4c6a-56b9-bf8b-65f83bbfaa14
+		summarizeBy: none
+		sourceColumn: revenue
+
+	column vote_average
+		dataType: double
+		lineageTag: dcb8cdca-39e3-5374-8176-b2798a3a7000
+		summarizeBy: none
+		sourceColumn: vote_average
+
+	column vote_count
+		dataType: int64
+		lineageTag: cfd801b7-018e-5663-bc4a-a43b7a05ddb0
+		summarizeBy: none
+		sourceColumn: vote_count
+
+	column runtime
+		dataType: int64
+		lineageTag: 9d0bf9e0-6383-541b-bcb4-ddbdad3ce281
+		summarizeBy: none
+		sourceColumn: runtime
+
+	column popularity
+		dataType: double
+		lineageTag: b58fb1b6-8b54-5ecc-97b9-9b2e53673f0c
+		summarizeBy: none
+		sourceColumn: popularity
+
+	column gross_difference
+		dataType: int64
+		lineageTag: 07b098a9-3278-5a5b-94c5-ec121c765e9f
+		summarizeBy: none
+		sourceColumn: gross_difference
+
+	column roi_approx
+		dataType: double
+		lineageTag: 2f250e10-16d0-59ee-bf35-1d9f5b15b39e
+		summarizeBy: none
+		sourceColumn: roi_approx
+
+	/// Reglas exploratorias: presupuesto positivo menor a 1000 o >=300 millones; ingreso positivo <=100 o >=5 mil millones; ROI >=100 (10,000%); presupuesto igual a ingreso. Sin alertas no significa verificado. No se exige tener ambos importes.
+	column calidad_financiera
+		dataType: string
+		lineageTag: 43035acc-7d8a-5b6c-a387-b2026644ca2d
+		summarizeBy: none
+		sourceColumn: calidad_financiera
+
+	partition fact_peliculas = m
+		mode: import
+		source =
+				let
+				    Origen = Parquet.Document(File.Contents(RutaParquet & "\fact_peliculas.parquet")),
+				    Tipos = Table.TransformColumnTypes(Origen, {{"pelicula_key", Int64.Type}, {"fecha_key", Int64.Type}, {"budget", Int64.Type}, {"revenue", Int64.Type}, {"vote_average", type number}, {"vote_count", Int64.Type}, {"runtime", Int64.Type}, {"popularity", type number}, {"gross_difference", Int64.Type}, {"roi_approx", type number}}),
+				    Clasificacion = Table.AddColumn(Tipos, "calidad_financiera", each if ([budget] <> null and ([budget] < 1000 or [budget] >= 300000000)) or ([revenue] <> null and ([revenue] <= 100 or [revenue] >= 5000000000)) or ([roi_approx] <> null and [roi_approx] >= 100) or ([budget] <> null and [revenue] <> null and [budget] = [revenue]) then "Revisar" else if [budget] = null and [revenue] = null then "Sin importes" else "Sin alertas detectadas", type text)
+				in
+				    Clasificacion
+
+	annotation PBI_ResultType = Table
+

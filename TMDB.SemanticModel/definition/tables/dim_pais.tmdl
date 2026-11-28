@@ -1,0 +1,28 @@
+table dim_pais
+	lineageTag: 0cac816a-925c-59ec-a2dc-e887a570bff4
+
+	column pais_key
+		dataType: int64
+		isHidden
+		lineageTag: 0afa5144-b8a1-5fc4-a1d3-20131da26465
+		summarizeBy: none
+		sourceColumn: pais_key
+
+	column pais
+		dataType: string
+		lineageTag: 7c5bda52-7f78-5386-a9d4-28ac1023fda5
+		dataCategory: Country
+		summarizeBy: none
+		sourceColumn: pais
+
+	partition dim_pais = m
+		mode: import
+		source =
+				let
+				    Origen = Parquet.Document(File.Contents(RutaParquet & "\dim_pais.parquet")),
+				    Tipos = Table.TransformColumnTypes(Origen, {{"pais_key", Int64.Type}, {"pais", type text}})
+				in
+				    Tipos
+
+	annotation PBI_ResultType = Table
+

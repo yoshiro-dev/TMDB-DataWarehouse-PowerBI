@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "f3718133b614f42f1dcc",
+  "position": {
+    "x": 348.35973294933893,
+    "y": 342.327529781385,
+    "z": 19000,
+    "height": 478.05210106034821,
+    "width": 1060.1597067679015,
+    "tabOrder": 19000
+  },
+  "visual": {
+    "visualType": "treemap",
+    "query": {
+      "queryState": {
+        "Group": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_pais"
+                    }
+                  },
+                  "Property": "pais"
+                }
+              },
+              "queryRef": "dim_pais.pais",
+              "nativeQueryRef": "pais",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_peliculas"
+                    }
+                  },
+                  "Property": "Votos totales"
+                }
+              },
+              "queryRef": "fact_peliculas.Votos totales",
+              "nativeQueryRef": "Votos totales"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

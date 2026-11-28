@@ -1,0 +1,5 @@
+expression RutaParquet = "C:\Users\NTD\TMDB-DataWarehouse-PowerBI\parquet" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: a41f6baf-0c96-55c1-b38a-02c65da1d037
+
+	annotation PBI_ResultType = Text
+

@@ -1,0 +1,27 @@
+table dim_idioma
+	lineageTag: 8404f909-564b-5af2-b1cd-4eb2f880e908
+
+	column idioma_key
+		dataType: int64
+		isHidden
+		lineageTag: 9e649ba1-ba0d-5500-8dea-cc53572e44c8
+		summarizeBy: none
+		sourceColumn: idioma_key
+
+	column idioma
+		dataType: string
+		lineageTag: a90ff162-bdc2-5603-93ad-3281597ec4c4
+		summarizeBy: none
+		sourceColumn: idioma
+
+	partition dim_idioma = m
+		mode: import
+		source =
+				let
+				    Origen = Parquet.Document(File.Contents(RutaParquet & "\dim_idioma.parquet")),
+				    Tipos = Table.TransformColumnTypes(Origen, {{"idioma_key", Int64.Type}, {"idioma", type text}})
+				in
+				    Tipos
+
+	annotation PBI_ResultType = Table
+

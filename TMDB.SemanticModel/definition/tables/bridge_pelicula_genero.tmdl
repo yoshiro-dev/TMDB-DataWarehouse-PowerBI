@@ -1,0 +1,29 @@
+table bridge_pelicula_genero
+	isHidden
+	lineageTag: b7b99f55-2c57-5cf1-bb62-de82fe8ea28f
+
+	column pelicula_key
+		dataType: int64
+		isHidden
+		lineageTag: 358a117d-0f34-539b-8a45-78557118fb04
+		summarizeBy: none
+		sourceColumn: pelicula_key
+
+	column genero_key
+		dataType: int64
+		isHidden
+		lineageTag: badca811-9bc6-583f-9a1c-c64615b47f91
+		summarizeBy: none
+		sourceColumn: genero_key
+
+	partition bridge_pelicula_genero = m
+		mode: import
+		source =
+				let
+				    Origen = Parquet.Document(File.Contents(RutaParquet & "\bridge_pelicula_genero.parquet")),
+				    Tipos = Table.TransformColumnTypes(Origen, {{"pelicula_key", Int64.Type}, {"genero_key", Int64.Type}})
+				in
+				    Tipos
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,27 @@
+table dim_genero
+	lineageTag: e8d6d94f-04c1-583e-8bec-a33cc203066d
+
+	column genero_key
+		dataType: int64
+		isHidden
+		lineageTag: 20593df8-5fa7-565a-bb40-2d6fb2bda610
+		summarizeBy: none
+		sourceColumn: genero_key
+
+	column genero
+		dataType: string
+		lineageTag: 3d7eb7ed-d8e3-526f-8037-2a31ee1dffd9
+		summarizeBy: none
+		sourceColumn: genero
+
+	partition dim_genero = m
+		mode: import
+		source =
+				let
+				    Origen = Parquet.Document(File.Contents(RutaParquet & "\dim_genero.parquet")),
+				    Tipos = Table.TransformColumnTypes(Origen, {{"genero_key", Int64.Type}, {"genero", type text}})
+				in
+				    Tipos
+
+	annotation PBI_ResultType = Table
+

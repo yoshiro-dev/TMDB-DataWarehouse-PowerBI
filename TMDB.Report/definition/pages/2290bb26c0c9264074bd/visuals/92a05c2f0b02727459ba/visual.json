@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "92a05c2f0b02727459ba",
+  "position": {
+    "x": 364.94829166121218,
+    "y": 342.327529781385,
+    "z": 19000,
+    "height": 467.49574551642883,
+    "width": 1033.0147925121089,
+    "tabOrder": 19000
+  },
+  "visual": {
+    "visualType": "treemap",
+    "query": {
+      "queryState": {
+        "Group": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_pelicula"
+                    }
+                  },
+                  "Property": "original_language"
+                }
+              },
+              "queryRef": "dim_pelicula.original_language",
+              "nativeQueryRef": "original_language",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_peliculas"
+                    }
+                  },
+                  "Property": "Ingresos totales"
+                }
+              },
+              "queryRef": "fact_peliculas.Ingresos totales",
+              "nativeQueryRef": "Ingresos totales"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

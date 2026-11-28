@@ -1,0 +1,27 @@
+table dim_productora
+	lineageTag: d28bbedb-3742-54c9-9c62-4802e4821ab6
+
+	column productora_key
+		dataType: int64
+		isHidden
+		lineageTag: a2b1b8c8-ae32-5b5f-b99a-28ef5e4e32ed
+		summarizeBy: none
+		sourceColumn: productora_key
+
+	column productora
+		dataType: string
+		lineageTag: 9fe19a0f-2003-5787-9a00-daa58194727e
+		summarizeBy: none
+		sourceColumn: productora
+
+	partition dim_productora = m
+		mode: import
+		source =
+				let
+				    Origen = Parquet.Document(File.Contents(RutaParquet & "\dim_productora.parquet")),
+				    Tipos = Table.TransformColumnTypes(Origen, {{"productora_key", Int64.Type}, {"productora", type text}})
+				in
+				    Tipos
+
+	annotation PBI_ResultType = Table
+
